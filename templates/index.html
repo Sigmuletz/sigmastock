@@ -1,0 +1,220 @@
+<html>
+    <title>"GPU Hunter"</title>
+    <head>
+    <link rel="stylesheet" href='static/Skeleton-2.0.4/css/normalize.css' />
+    <link rel="stylesheet" href='static/Skeleton-2.0.4/css/skeleton.css' />
+      </head>
+    <style>
+        html {
+            margin-top: 48px;
+        }
+    </style>
+    <body style="background-color: #222;">
+        <div class="container">
+            <div class="row">
+                <div class="one columns" ></div>
+                <div class="nine columns" >
+                    Welcome to "GPU Hunter"
+                </div>
+                <div class="one columns" >
+                    Made by Sigmuletz
+                </div>
+                <div class="one columns" ></div>
+            </div>
+        </div>
+            <br><br>
+        <div class="container" align="center">    
+            <table>
+                <thead>
+                    <tr>
+                        <th>Shops</th>
+                    {% for items in config_json['options'] %}
+                        <th>{{ items }}</th>
+                    {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for shop in config_json['shops'] %}
+                        <tr>
+                            <td><img src="{{ config_json['shop'][shop]['image'] }}" width="{{ config_json['shop'][shop]['size'] }}"></td>
+                            
+                            {% for opt in config_json['shop'][shop]['options'] %}
+                                <td>
+                                    <label for="{{ opt }}">
+                                    {% if config_json['shop'][shop]['options'][opt] == True %}
+                                        <input type="checkbox" id="{{ opt }}" name="{{ opt }}" checked value="{{ config_json['shop'][shop]['options'][opt] }}" onclick="window.location.href='/toggele?shop={{ shop }}&card={{ opt }}'">
+                                    {% else %}
+                                        <input type="checkbox" id="{{ opt }}" name="{{ opt }}" value="{{ config_json['shop'][shop]['options'][opt] }}" onclick="window.location.href='/toggele?shop={{ shop }}&card={{ opt }}'">
+                                    {% endif %}
+                                    {{ opt }}
+                                    </label>
+                                </td>                             
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" id="myInput" onkeyup="filterFunction()" placeholder="Search for names..">
+                    </td>
+                    <td>
+                        <input class="button" value = "Refresh all" onclick="window.location.href='/?refresh=all'" />
+                    </td>
+                </tr>
+            </table>
+
+            <table class="u-full-width" id="myTable">
+                <thead>
+                    <tr>
+                        <th><a onclick="sortTable(0)">Shop</a></th>
+                        <th><a onclick="sortTable(1)">Stock</a></th>
+                        <th><a onclick="sortTable(2)">Card</a></th>
+                        <th><a onclick="sortTable(3)">AIB</a></th>
+                        <th><a onclick="sortTable(4)">Model</a></th>
+                        <th><a onclick="sortTable(5)">Note</a></th>
+                        <th><a onclick="sortTable(6)">Price</a></th>
+                        <th><a onclick="sortTable(7)">Shop Price</a></th>
+                        <th><a onclick="sortTable(8)">Age</a></th>
+                        <th><a onclick="sortTable(9)">Id</a></th>
+                        <th><a onclick="sortTable(10)">Desc.</a></th>
+                        <th><a onclick="sortTable(11)">Updated</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for items in items_json %}
+                        {% for card in items['items'] %}
+                        {% if card['note'] != "hide" %}
+                        <tr>
+                            {% if card['shop'] == "EMAG" %}
+                                <td><img src="static\emag.svg" alt="EMAG" width="40"></td>
+                            {% elif card['shop'] == "PCGR" %}
+                                <td><img src="static\pcgr_small.png" alt="PCGR" width="40"></td>
+                            {% elif card['shop'] == "OLX" %}
+                                <td><img src="static\olx.png" alt="OLX" width="30"></td>
+                            {% else %}
+                                <td>{{ card['shop'] }}</td>
+                            {% endif %}
+                            {% if card['stock'] == "Vand" or card['stock'] == "in stock" %}
+                            <td style="color: #1ccc8e; font-weight: 700;">{{ card['stock'] }}</td> 
+                            {% else %}
+                            <td style="color :red; ">{{ card['stock'] }}</td> 
+                            {% endif %}
+                            {% if card['note'] == "skip" %}
+                                {% set row_color = "#555" %}
+                            {% elif "buc" in card['note'] %}
+                                {% set row_color = "red" %}
+                            {% elif "scump" in card['note'] or "meh" in card['note'] %}
+                                {% set row_color = "yellow" %}
+                            {% else %}
+                                {% set row_color = "white" %}
+                            {% endif %}
+                            <td style="color: {{ row_color }};">{{ card['name'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['aib'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['model'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['note'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['price'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['real_price'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['age'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['id'] }}</td>
+                            <td style="color: {{ row_color }};">{{ card['description'] }}</td>
+                            <td style="color: {{ row_color }};">{{ items['datetime'] }}</td>
+                        </tr>
+                        {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>   
+            </table>
+        </div>
+        <div class="container">
+            <br><br>
+            <form action = "http://localhost:5000/search" method = "POST">
+                <div class="row" >
+                    <div class="four columns"">
+                        Song name to search:
+                    </div>
+                    <div class="four columns" >
+                        <input type = "text" name = "song_name" />
+                    </div>
+                    <div class="four columns" >
+                        <input class="button-primary" type = "submit" value = "submit" />
+                    </div>
+                </div>
+            </form>
+            <button>Test Button</button>
+            <br>            <br>
+        </div>
+
+      <script>
+        var order=1; // global sorting order
+        function sortTable(param1) {
+            order = order *-1;
+          var table, rows, switching, i, x, y, shouldSwitch;
+          if (param1 === undefined) {
+                param1 = 0;
+            }
+          table = document.getElementById("myTable");
+          switching = true;
+          /*Make a loop that will continue until
+          no switching has been done:*/
+          while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+              //start by saying there should be no switching:
+              shouldSwitch = false;
+              /*Get the two elements you want to compare,
+              one from current row and one from the next:*/
+              x = rows[i].getElementsByTagName("TD")[param1];
+              y = rows[i + 1].getElementsByTagName("TD")[param1];
+              //check if the two rows should switch place:
+                if (order>0) {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                } else {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                        //if so, mark as a switch and break the loop:
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+            }
+            if (shouldSwitch) {
+              /*If a switch has been marked, make the switch
+              and mark that a switch has been done:*/
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+            }
+          }
+        }
+        function filterFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[10];
+                if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }
+            }
+        }
+        </script>
+    </body>
+</html>

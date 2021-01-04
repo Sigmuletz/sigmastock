@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="stylesheet" href='/static/Skeleton-2.0.4/css/normalize.css'/>
+        <link rel="stylesheet" href='/static/Skeleton-2.0.4/css/skeleton.css' />
+      </head>
+    <body>
+        <div class="container">
+        <title>Search Page - HTML</title>
+            <br>
+        Song that you are looking for:  {{ song_name }} <br>
+        <a href="http://localhost:5000/">Back</a> <br>
+        <a href="">Download</a> <br>
+        <br>
+        <h1>Table</h1>
+        <br>
+        <table class="u-full-width">
+            <thead>
+                <tr>
+                    <th>Artist</th>
+                    <th>Title</th>
+                    <th>Album</th>
+                    <th>Duration</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for song in response_json['songs'] %}
+                <tr>
+                    <td>{{ song['artist'] }}</td>
+                    <td>{{ song['title'] }}</td> 
+                    <td>{{ song['album'] }}</td>
+                    <td>{{ song['duration'] }}</td>
+                    <td><a href="{{ song['download_url'] }}">Download</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>   
+        </table>
+
+        <h1>List</h1>
+        <ul>
+            {% for song in response_json['songs'] %}
+                        <li> 
+                        {% for key,value in song.items() recursive %}
+
+                            {% if key == "artist" %}
+                            {{ value }} - 
+                            {% endif %}
+                            {% if key == "title" %}
+                            {{ value }}
+                            {% endif %}
+                            {% if key == "download_url" %}
+                            <a href="{{ value }}"> DOWNLOAD HIT </a>
+                            {% endif %}
+
+                        {% endfor %}
+                    </li>
+
+            {% endfor %}
+        </ul>
+        <br>
+        <h1>RAW JSON</h1>
+        {{ response_json }}
+        </div>
+    </body>
+</html>

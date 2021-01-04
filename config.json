@@ -1,0 +1,53 @@
+{
+      "shops": [
+            "EMAG",
+            "PCGR",
+            "OLX"
+      ],
+      "options": [
+            "6800 XT",
+            "6900 XT",
+            "RTX 3060",
+            "RTX 3070",
+            "RTX 3080",
+            "RTX 3090"
+      ],
+      "shop": {
+            "EMAG": {
+                  "image": "static\\emag.svg",
+                  "size": "40",
+                  "options": {
+                        "E_6800": true,
+                        "E_6900": false,
+                        "E_3060": false,
+                        "E_3070": false,
+                        "E_3080": true,
+                        "E_3090": false
+                  }
+            },
+            "PCGR": {
+                  "image": "static\\pcgr_small.png",
+                  "size": "40",
+                  "options": {
+                        "P_6800": true,
+                        "P_6900": false,
+                        "P_3060": false,
+                        "P_3070": false,
+                        "P_3080": true,
+                        "P_3090": false
+                  }
+            },
+            "OLX": {
+                  "image": "static\\olx.png",
+                  "size": "30",
+                  "options": {
+                        "O_6800": true,
+                        "O_6900": false,
+                        "O_3060": false,
+                        "O_3070": false,
+                        "O_3080": true,
+                        "O_3090": false
+                  }
+            }
+      }
+}
