@@ -1,5 +1,5 @@
 {
-      "datetime": "2020.12.27 17:18",
+      "datetime": "2021.01.04 17:27",
       "items": [
             {
                   "shop": "PCGR",
@@ -71,6 +71,21 @@
                   "description": "ASRock Radeon RX 6800 XT Phantom Gaming D 16GB GDDR6 256-bit",
                   "name": "6800 XT ",
                   "price": "4999",
+                  "age": "",
+                  "location": "",
+                  "real_price": "n/a",
+                  "note": "N/A"
+            },
+            {
+                  "shop": "PCGR",
+                  "id": "2124698",
+                  "aib": "ASUS",
+                  "model": "TUF GAMING",
+                  "aib_model": "6800 XT      ASUS   TUF GAMING",
+                  "stock": "stock epuizat",
+                  "description": "ASUS Radeon RX 6800 XT TUF GAMING O16G 16GB GDDR6 256-bit",
+                  "name": "6800 XT ",
+                  "price": "5399",
                   "age": "",
                   "location": "",
                   "real_price": "n/a",

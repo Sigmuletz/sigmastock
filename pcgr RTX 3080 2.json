@@ -1,6 +1,21 @@
 {
-      "datetime": "2020.12.27 17:18",
+      "datetime": "2021.01.04 17:27",
       "items": [
+            {
+                  "shop": "PCGR",
+                  "id": "2114794",
+                  "aib": "Zotac",
+                  "model": "Trinity",
+                  "aib_model": "RTX 3080    Zotac      Trinity",
+                  "stock": "stock epuizat",
+                  "description": "Zotac GeForce RTX 3080 Trinity OC 10GB GDDR6X 320-bit",
+                  "name": "RTX 3080",
+                  "price": "4799",
+                  "age": "",
+                  "location": "",
+                  "real_price": "n/a",
+                  "note": "N/A"
+            },
             {
                   "shop": "PCGR",
                   "id": "2122842",

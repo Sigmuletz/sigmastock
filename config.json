@@ -22,7 +22,7 @@
                         "E_3060": false,
                         "E_3070": false,
                         "E_3080": true,
-                        "E_3090": false
+                        "E_3090": true
                   }
             },
             "PCGR": {
@@ -34,7 +34,7 @@
                         "P_3060": false,
                         "P_3070": false,
                         "P_3080": true,
-                        "P_3090": false
+                        "P_3090": true
                   }
             },
             "OLX": {
@@ -46,7 +46,7 @@
                         "O_3060": false,
                         "O_3070": false,
                         "O_3080": true,
-                        "O_3090": false
+                        "O_3090": true
                   }
             }
       }
