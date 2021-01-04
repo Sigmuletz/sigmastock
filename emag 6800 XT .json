@@ -1,0 +1,50 @@
+{
+      "datetime": "2020.12.10 01:45",
+      "items": [
+            {
+                  "shop": "EMAG",
+                  "id": "7369673",
+                  "aib": "ASRock",
+                  "model": "Phantom Gami",
+                  "aib_model": "6800 XT    ASRock Phantom Gami",
+                  "stock": "stock epuizat",
+                  "description": "Placa video ASRock Radeon\u2122 RX 6800 XT Phantom Gaming D OC, 16GB GDDR6, 256-bit",
+                  "name": "6800 XT ",
+                  "price": "5.099",
+                  "age": "",
+                  "location": "",
+                  "real_price": "N/A",
+                  "note": "N/A"
+            },
+            {
+                  "shop": "EMAG",
+                  "id": "7369672",
+                  "aib": "ASRock",
+                  "model": "Taichi",
+                  "aib_model": "6800 XT    ASRock       Taichi",
+                  "stock": "stock epuizat",
+                  "description": "Placa video ASRock Radeon\u2122 RX 6800 XT Taichi X OC, 16GB GDDR6, 256-bit",
+                  "name": "6800 XT ",
+                  "price": "5.199",
+                  "age": "",
+                  "location": "",
+                  "real_price": "N/A",
+                  "note": "N/A"
+            },
+            {
+                  "shop": "EMAG",
+                  "id": "7300203",
+                  "aib": "PowerCol",
+                  "model": "GAMING",
+                  "aib_model": "6800 XT  PowerCol       GAMING",
+                  "stock": "stock epuizat",
+                  "description": "Placa video gaming PowerColor AMD Radeon\u2122 RX 6800 XT, 16GB GDDR6, 256-bit, AMD RDNA\u21222",
+                  "name": "6800 XT ",
+                  "price": "4.399",
+                  "age": "",
+                  "location": "",
+                  "real_price": "N/A",
+                  "note": "N/A"
+            }
+      ]
+}

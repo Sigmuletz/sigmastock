@@ -28,7 +28,6 @@ def clean_price(new_price):
     # print("Price:"+new_price)
     return new_price
 
-
 def show_results(json_file):
     """"Display results in console"""
     # load search results

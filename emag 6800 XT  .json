@@ -1,0 +1,50 @@
+{
+      "datetime": "2020.12.27 17:18",
+      "items": [
+            {
+                  "shop": "EMAG",
+                  "id": "7300206",
+                  "aib": "GIGABYTE",
+                  "model": "",
+                  "aib_model": "6800 XT  GIGABYTE             ",
+                  "stock": "stock epuizat",
+                  "description": "Placa video Gigabyte Radeon\u2122 RX 6800 XT, 16GB GDDR6, 256-bit",
+                  "name": "6800 XT ",
+                  "price": "4699",
+                  "age": "",
+                  "location": "",
+                  "real_price": "3999",
+                  "note": "N/A"
+            },
+            {
+                  "shop": "EMAG",
+                  "id": "7452075",
+                  "aib": "PowerCol",
+                  "model": "",
+                  "aib_model": "6800 XT  PowerCol             ",
+                  "stock": "stock epuizat",
+                  "description": "Placa video PowerColor Radeon\u2122 RX 6800 XT Red Devil Limited Edition, 16GB GDDR6, 256-bit",
+                  "name": "6800 XT ",
+                  "price": "5499",
+                  "age": "",
+                  "location": "",
+                  "real_price": "n/a",
+                  "note": "N/A"
+            },
+            {
+                  "shop": "EMAG",
+                  "id": "7412688",
+                  "aib": "ASUS",
+                  "model": "Strix",
+                  "aib_model": "6800 XT      ASUS        Strix",
+                  "stock": "stock epuizat",
+                  "description": "Placa video ASUS ROG Strix LC Radeon\u2122 RX 6800 XT GAMING OC, 16GB GDDR6, 256-bit",
+                  "name": "6800 XT ",
+                  "price": "5399",
+                  "age": "",
+                  "location": "",
+                  "real_price": "n/a",
+                  "note": "N/A"
+            }
+      ]
+}
